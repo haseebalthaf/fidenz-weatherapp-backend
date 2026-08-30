@@ -73,13 +73,23 @@ export function calculateComfortIndex({
   humidity,
   windSpeed,
   cloudiness,
+  visibility,
 }: Pick<
   Weather,
   'temperature' |
   'humidity' |
   'windSpeed' |
-  'cloudiness'
+  'cloudiness' |
+  'visibility'
 >): number {
+
+  const visibilityScore = rangeScore (
+    visibility,
+    5000,
+    10000,
+    5000,
+  )
+
   const apparentTemperature =
     calculateApparentTemperature(
       temperature,
@@ -114,7 +124,8 @@ export function calculateComfortIndex({
     temperatureScore * 0.55 +
     humidityScore * 0.20 +
     windScore * 0.15 +
-    cloudinessScore * 0.10
+    cloudinessScore * 0.10 +
+    visibilityScore * 0.05
 
   return Math.round(clamp(weightedScore))
 }

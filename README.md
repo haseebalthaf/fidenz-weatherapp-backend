@@ -38,3 +38,9 @@ This project has two repositories:
 | Wind Speed | Cool (<24°C) | ≤1.5 m/s | 8 m/s | 15% |
 | Cloudiness | Hot (≥28°C) | 20–70% | 40% | 10% |
 | Cloudiness | Moderate (<28°C) | 0–50% | 50% | 10% |
+
+
+## Credentials
+
+Email: careers@fidenz.com
+Password: Password#fidenz

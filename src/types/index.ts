@@ -26,6 +26,7 @@ export interface Weather {
   windSpeed: number
   cloudiness: number
   description: string
+  visibility: number
   icon: string
   updatedAt: string
 }

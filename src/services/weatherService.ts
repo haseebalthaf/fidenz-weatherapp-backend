@@ -11,6 +11,7 @@ interface OpenWeatherResponse {
   wind?: { speed?: number }
   clouds?: { all?: number }
   weather?: Array<{ description?: string; icon?: string }>
+  visibility?: number
 }
 
 export async function fetchCityWeather(city: City): Promise<WeatherResult> {
@@ -44,6 +45,7 @@ export async function fetchCityWeather(city: City): Promise<WeatherResult> {
     windSpeed: data.wind?.speed || 0,
     cloudiness: data.clouds?.all || 0,
     description: data.weather?.[0]?.description || 'Unknown',
+    visibility: data.visibility ?? 0,
     icon: data.weather?.[0]?.icon || '01d',
     updatedAt: new Date().toISOString(),
   }
